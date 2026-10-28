@@ -1,0 +1,31 @@
+feature,area,priority,original,clone,notes
+Audio lesson player with play pause and scrub,lessons,must,yes,no,S05
+Lessons built on prompt then pause then answer (anticipation),lessons,must,yes,no,our own scripts
+Spaced recall of items inside a lesson (graduated intervals),lessons,must,yes,no,generated timeline
+Earlier lessons' items recycled in later lessons,lessons,must,yes,no,
+Original Japanese Level 1 lessons (5 for v1),content,must,no,no,written fresh; original has 30 per level
+Japanese and English text-to-speech voices,content,must,no,no,replaces recorded native speakers
+Home with next lesson card,home,must,yes,no,S03
+Lesson list with done current locked states,home,must,yes,no,S04
+Save position and resume a lesson,progress,must,yes,no,F02
+Mark lesson complete and unlock next,progress,must,yes,no,S06
+Audio keeps playing with screen locked,lessons,must,yes,no,Media Session API; PWA limits
+Skip back and forward,lessons,should,yes,no,
+Playback speed,lessons,should,yes,no,
+Reading lessons (kana with audio),reading,should,yes,no,S07
+Flash cards per lesson with audio,practice,should,yes,no,S09
+Multiple-choice match quiz,practice,should,yes,no,S10; own name
+Progress stats and streak,progress,should,yes,no,S13
+Installable on phone home screen,platform,should,yes,no,PWA manifest
+Works offline after first load,platform,should,yes,no,service worker cache of audio
+Dialogue role-play with transcript,practice,could,yes,no,S11; own name
+Pronunciation check with speech recognition,practice,could,yes,no,Web Speech API; uneven support
+Drive mode big controls,lessons,could,yes,no,S15
+Daily reminder,progress,could,yes,no,
+Account sync across devices,account,could,yes,no,Supabase later
+Subscription and paywall,payments,could,yes,no,S16; only if selling
+Lessons 6-30 and Levels 2-5,content,could,yes,no,content work
+Pimsleur audio and lesson scripts,content,skip,yes,skip,copyrighted content owned by Pimsleur
+51 other languages,content,skip,yes,skip,Japanese only by scope
+AI conversation coach,practice,skip,yes,skip,licensed LLM feature; revisit later
+Pimsleur brand and branded feature names,brand,skip,yes,skip,trademarks; clone uses its own names
