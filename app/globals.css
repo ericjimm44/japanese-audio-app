@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Generated from replica/design/tokens.json (RGB triplets for Tailwind alpha). */
+:root {
+  --bg: 14 16 20;
+  --surface: 23 26 32;
+  --elevated: 32 36 44;
+  --border: 43 48 57;
+  --border-input: 115 124 138;
+  --text: 242 243 245;
+  --text-muted: 163 171 184;
+  --accent: 240 113 79;
+  --on-accent: 26 11 6;
+  --danger: 242 107 107;
+  --success: 76 195 138;
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: rgb(var(--bg));
+  color: rgb(var(--text));
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid rgb(var(--accent));
+  outline-offset: 2px;
+}

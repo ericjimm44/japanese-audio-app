@@ -1,22 +1,22 @@
 feature,area,priority,original,clone,notes
-Audio lesson player with play pause and scrub,lessons,must,yes,no,S05
-Lessons built on prompt then pause then answer (anticipation),lessons,must,yes,no,our own scripts
-Spaced recall of items inside a lesson (graduated intervals),lessons,must,yes,no,generated timeline
-Earlier lessons' items recycled in later lessons,lessons,must,yes,no,
-Original Japanese Level 1 lessons (5 for v1),content,must,no,no,written fresh; original has 30 per level
-Japanese and English text-to-speech voices,content,must,no,no,replaces recorded native speakers
-Home with next lesson card,home,must,yes,no,S03
-Lesson list with done current locked states,home,must,yes,no,S04
-Save position and resume a lesson,progress,must,yes,no,F02
-Mark lesson complete and unlock next,progress,must,yes,no,S06
-Audio keeps playing with screen locked,lessons,must,yes,no,Media Session API; PWA limits
-Skip back and forward,lessons,should,yes,no,
-Playback speed,lessons,should,yes,no,
+Audio lesson player with play pause and scrub,lessons,must,yes,yes,S05
+Lessons built on prompt then pause then answer (anticipation),lessons,must,yes,yes,our own scripts
+Spaced recall of items inside a lesson (graduated intervals),lessons,must,yes,yes,generated timeline
+Earlier lessons' items recycled in later lessons,lessons,must,yes,yes,
+Original Japanese Level 1 lessons (5 for v1),content,must,no,partial,2 of 5 written; draft until native-speaker check
+Japanese and English text-to-speech voices,content,must,no,yes,replaces recorded native speakers
+Home with next lesson card,home,must,yes,yes,S03
+Lesson list with done current locked states,home,must,yes,partial,"done / up next / in progress; nothing locked, any lesson can be opened"
+Save position and resume a lesson,progress,must,yes,yes,F02
+Mark lesson complete and unlock next,progress,must,yes,yes,S06
+Audio keeps playing with screen locked,lessons,must,yes,partial,wake lock keeps the screen on; true lock-screen play needs pre-rendered audio (v1.1)
+Skip back and forward,lessons,should,yes,yes,
+Playback speed,lessons,should,yes,yes,
 Reading lessons (kana with audio),reading,should,yes,no,S07
 Flash cards per lesson with audio,practice,should,yes,no,S09
 Multiple-choice match quiz,practice,should,yes,no,S10; own name
-Progress stats and streak,progress,should,yes,no,S13
-Installable on phone home screen,platform,should,yes,no,PWA manifest
+Progress stats and streak,progress,should,yes,yes,S13
+Installable on phone home screen,platform,should,yes,partial,manifest + SVG icon; no service worker or PNG icons yet
 Works offline after first load,platform,should,yes,no,service worker cache of audio
 Dialogue role-play with transcript,practice,could,yes,no,S11; own name
 Pronunciation check with speech recognition,practice,could,yes,no,Web Speech API; uneven support

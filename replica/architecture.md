@@ -26,23 +26,22 @@ No server, no database, no API keys for the v1 vertical slice.
 A lesson is a script of **steps**. The compiler expands it into a flat
 **timeline** of segments the player walks through.
 
-```jsonc
-// content/ja/level1/01.json
-{
-  "id": "ja-1-01",
-  "level": 1, "number": 1,
-  "title": "Excuse me, do you understand English?",
-  "items": [
-    { "id": "sumimasen", "ja": "すみません", "romaji": "sumimasen", "en": "excuse me",
-      "chunks": ["sen", "masen", "sumimasen"] }      // back-chained build-up
+```ts
+// content/ja/level1/01.ts  (TypeScript, so content is type-checked)
+const lesson: Lesson = {
+  id: "ja-1-01", level: 1, number: 1,
+  title: "Hello, a coffee please",
+  items: [
+    { id: "please", ja: "おねがいします", romaji: "onegai shimasu", en: "please",
+      chunks: ["ます", "します", "ねがいします", "おねがいします"] },   // back-chained build-up
   ],
-  "steps": [
-    { "type": "dialogue", "lines": [ { "speaker": "A", "ja": "すみません。" } ] },
-    { "type": "narrate", "en": "Listen to how to say 'excuse me'." },
-    { "type": "introduce", "item": "sumimasen" },   // model, build-up, repeat
-    { "type": "prompt", "item": "sumimasen", "cue": "How do you say 'excuse me'?" }
-  ]
-}
+  steps: [
+    { type: "dialogue", lines: [{ speaker: "Customer", ja: "コーヒー、おねがいします。" }] },
+    { type: "introduce", item: "please" },   // model, build-up, repeat
+    { type: "prompt", item: "please" },      // cue, pause, answer
+    { type: "recap" },                       // recall everything still under-practised
+  ],
+};
 ```
 
 Segment kinds the compiler emits: `narration (en)`, `model (ja)`,

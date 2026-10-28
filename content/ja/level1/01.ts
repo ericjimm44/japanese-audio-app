@@ -1,0 +1,75 @@
+import type { Lesson } from "../../../lib/engine/types.ts";
+
+const lesson: Lesson = {
+  id: "ja-1-01",
+  level: 1,
+  number: 1,
+  title: "Hello, a coffee please",
+  summary: "Greet someone, order a coffee, and say thank you.",
+  reviewed: false,
+  items: [
+    { id: "hello", ja: "こんにちは", romaji: "konnichiwa", en: "hello" },
+    { id: "coffee", ja: "コーヒー", romaji: "kōhī", en: "coffee" },
+    {
+      id: "please",
+      ja: "おねがいします",
+      romaji: "onegai shimasu",
+      en: "please",
+      chunks: ["ます", "します", "ねがいします", "おねがいします"],
+    },
+    { id: "coffee-please", ja: "コーヒー、おねがいします", romaji: "kōhī, onegai shimasu", en: "a coffee, please" },
+    { id: "yes", ja: "はい", romaji: "hai", en: "yes" },
+    {
+      id: "thanks",
+      ja: "ありがとうございます",
+      romaji: "arigatō gozaimasu",
+      en: "thank you",
+      chunks: ["ございます", "ありがとう", "ありがとうございます"],
+    },
+  ],
+  steps: [
+    { type: "narrate", en: "Welcome to lesson one. Today you'll greet someone, order a coffee, and say thank you. First, just listen to a short conversation at a café." },
+    {
+      type: "dialogue",
+      lines: [
+        { speaker: "Customer", ja: "こんにちは。", en: "Hello." },
+        { speaker: "Staff", ja: "こんにちは。", en: "Hello." },
+        { speaker: "Customer", ja: "コーヒー、おねがいします。", en: "A coffee, please." },
+        { speaker: "Staff", ja: "はい。", en: "Sure." },
+        { speaker: "Customer", ja: "ありがとうございます。", en: "Thank you." },
+      ],
+    },
+    { type: "narrate", en: "Don't worry if that went by fast. By the end of this lesson you'll understand all of it, and you'll be able to say it yourself. When you hear a question, answer out loud in the pause, before the speaker does." },
+    { type: "introduce", item: "hello", note: `Here's how to say "hello". You can use it any time during the day.` },
+    { type: "prompt", item: "hello" },
+    { type: "introduce", item: "coffee", note: `Here's "coffee". It's borrowed from English. Notice the two long vowels.` },
+    { type: "prompt", item: "coffee" },
+    { type: "introduce", item: "please", note: `To ask for something politely, add this word. It means "please".` },
+    { type: "prompt", item: "please" },
+    { type: "narrate", en: `Now put them together. First "coffee", then "please".` },
+    { type: "introduce", item: "coffee-please", note: `Here's "a coffee, please".` },
+    { type: "prompt", item: "coffee-please" },
+    { type: "prompt", item: "hello", cue: "Someone at the counter greets you. Say hello back." },
+    { type: "introduce", item: "yes", note: `The staff member answers "yes", meaning "sure" or "certainly". Here's "yes".` },
+    { type: "prompt", item: "yes" },
+    { type: "introduce", item: "thanks", note: `Here's how to say "thank you" politely.` },
+    { type: "prompt", item: "thanks" },
+    { type: "prompt", item: "coffee-please", cue: "You're at the counter. Order a coffee." },
+    { type: "prompt", item: "thanks", cue: "Your coffee arrives. Thank them." },
+    { type: "recap" },
+    { type: "narrate", en: "Now listen to the conversation from the start of the lesson again." },
+    {
+      type: "dialogue",
+      lines: [
+        { speaker: "Customer", ja: "こんにちは。", en: "Hello." },
+        { speaker: "Staff", ja: "こんにちは。", en: "Hello." },
+        { speaker: "Customer", ja: "コーヒー、おねがいします。", en: "A coffee, please." },
+        { speaker: "Staff", ja: "はい。", en: "Sure." },
+        { speaker: "Customer", ja: "ありがとうございます。", en: "Thank you." },
+      ],
+    },
+    { type: "narrate", en: "You understood every word. That's the end of lesson one. Next time, you'll order tea and ask how much it costs." },
+  ],
+};
+
+export default lesson;
